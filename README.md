@@ -1,4 +1,5 @@
-Dont forget to install: `pip install dhooks`
+> [!NOTE]
+> Dont forget to install `pip install dhooks`
 
 Easy and open source code.
 
