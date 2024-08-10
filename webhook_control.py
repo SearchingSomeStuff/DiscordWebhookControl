@@ -3,6 +3,7 @@ import requests
 import threading
 import time
 
+
 def test_webhook(webhook_url):
     try:
         response = requests.get(webhook_url)
@@ -137,8 +138,8 @@ def main():
         print("[2] Send message")
         print("[3] Spam messages")
         print("[4] Delete Webhook")
-        print("[5] Logout")
-        print("[6] Send Embed")
+        print("[5] Send Embed")
+        print("[9] Logout")
         print("[0] Exit")
 
         choice = input("Choose an option: ")
@@ -157,13 +158,13 @@ def main():
                     webhook_url = input("Enter webhook URL: ")
                 webhook = Webhook(webhook_url)
         elif choice == '5':
+            send_embed(webhook)
+        elif choice == '9':
             webhook_url = logout()
             while not test_webhook(webhook_url):
                 print("Please enter a valid webhook URL.")
                 webhook_url = input("Enter webhook URL: ")
             webhook = Webhook(webhook_url)
-        elif choice == '6':
-            send_embed(webhook)
         elif choice == '0':
             print("Exiting...")
             exit(0)
